@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{% block title %} Налить воды {% endblock %}</h2>
+
+    <div class="pour-water">
+
+        <h5>Сейчас в чайнике: {{ water_amount }} литров воды</h5>
+
+        <form method="POST">
+            <p>
+                <label for="water-amount">
+                    Налить в чайник
+                </label>
+                <input id="water-amount"
+                       name="water_amount"
+                       placeholder="Литров воды">
+            <p>
+                <input type="submit" value="Налить воды" name="pour_water">
+            </p>
+            <p>
+                <input type="submit" value="Вылить всю воду" name="empty">
+            </p>
+        </form>
+
+    </div>
+{% endblock %}

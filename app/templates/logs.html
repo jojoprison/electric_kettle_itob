@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{% block title %} Логи {% endblock %}</h2>
+
+    <div class="logs">
+
+        <div class="log">
+            <div class="new-log">
+                <form method="POST">
+                    <p>
+                        <textarea id="log-content"
+                                  name="message"
+                                  placeholder="Что-то записать..."
+                                  cols="30" rows="3"></textarea>
+                    </p>
+                    <p>
+                        <input type="submit" value="Залогировать">
+                    </p>
+                </form>
+            </div>
+
+            <div class="logs-list">
+                {% for log in logs %}
+                    <div class="log">
+                        <h5>{{ log.message }}</h5>
+                        <h6>{{ log.created_at }}</h6>
+                        <hr>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

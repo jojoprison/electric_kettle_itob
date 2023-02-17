@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{% block title %} Конфигурация чайника {% endblock %}</h2>
+
+    <div class="config">
+
+        <form method="POST">
+            <p>
+                <label for="config-water">
+                    Емкость чайника
+                </label>
+                <input id="config-water"
+                       name="max_water_amount"
+                       placeholder="Емкость чайника"
+                       value={{ kettle_config.max_water_amount }}>
+                литров воды
+            </p>
+            <p>
+                <label for="config-off-temp">
+                    Температура авто-выключения
+                </label>
+                <input id="config-off-temp"
+                       name="switch_off_temperature"
+                       placeholder="Температура авто-выключения"
+                       value={{ kettle_config.switch_off_temperature }}>
+                °C
+            </p>
+            <p>
+                <label for="config-boiling-time">
+                    Время закипания
+                </label>
+                <input id="config-boiling-time"
+                       name="boiling_time"
+                       placeholder="Время закипания"
+                       value={{ kettle_config.boiling_time }}>
+                секунд
+            </p>
+            <p>
+                <label for="config-base-temperature">
+                    Базовая температура
+                </label>
+                <input id="config-base-temperature"
+                       name="base_temperature"
+                       placeholder="Базовая температура"
+                       value={{ kettle_config.base_temperature }}>
+                °C
+            </p>
+            <p>
+                <input type="submit" value="Переконфигурировать" name="reconfigure">
+            </p>
+            <p>
+                <input type="submit" value="Сбросить конфигурацию" name="reset">
+            </p>
+        </form>
+
+    </div>
+{% endblock %}

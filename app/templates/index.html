@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Чайник {% endblock %}</h1>
+    <form method="POST">
+        <input type="submit" value="Остыть" name="reset_temperature">
+    </form>
+
+    <h3>Состояние: {{ status }}</h3>
+    <h5>Сейчас в чайнике: {{ water_amount }} литров воды</h5>
+    <h5>Температура: {{ temperature }} °C</h5>
+
+    {% for log in logs %}
+        <h6>{{ log }}</h6>
+    {% endfor %}
+
+{% endblock %}
